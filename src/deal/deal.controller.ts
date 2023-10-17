@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Res, Body, HttpStatus } from '@nestjs/common';
+import { Controller, Post, Res, Body, HttpStatus } from '@nestjs/common';
 import { CreateDealDTO } from './dto/create-deal.dto';
 import { DealService } from './deal.service';
 
@@ -12,15 +12,5 @@ export class DealController {
       name: createDealDTO.name,
       id: 'deal id',
     });
-  }
-
-  @Get('/all')
-  async getAllDeals(@Res() res) {
-    return res.status(HttpStatus.OK).json([
-      {
-        name: 'DealName',
-        id: 'deal id',
-      },
-    ]);
   }
 }
